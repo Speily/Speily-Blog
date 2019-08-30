@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>Speily`s Blog - 首页</title>
+    <meta name="keywords" content="HTML5 Template">
+    <meta name="description" content="Forum - Responsive HTML5 Template">
+    <meta name="author" content="Forum">
+    <link rel="shortcut icon" href="favicon/favicon.ico.png">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body><!-- tt-mobile menu -->
+<nav class="panel-menu" id="mobile-menu">
+    <ul></ul>
+    <div class="mm-navbtn-names">
+        <div class="mm-closebtn">Close
+            <div class="tt-icon">
+                <svg>
+                    <use xlink:href="#icon-cancel"></use>
+                </svg>
+            </div>
+        </div>
+        <div class="mm-backbtn">Back</div>
+    </div>
+</nav>
+<!--NAV-->
+<header id="tt-header">
+    <div class="container">
+        <div class="row tt-row no-gutters">
+            <div class="col-auto"><!-- toggle mobile menu -->
+                <a class="toggle-mobile-menu" href="#">
+                    <svg class="tt-icon">
+                        <use xlink:href="#icon-menu_icon"></use>
+                    </svg>
+                </a><!-- /toggle mobile menu --><!-- logo -->
+                <div class="tt-logo"><a href="index.html">Speily的博客  <img src="images/logo.png" alt=""></a></div><!-- /logo -->
+                <!-- desctop menu -->
+                <div class="tt-desktop-menu">
+                    <nav>
+                        <ul>
+                            <li><a href="page-categories.html"><span>分类</span></a></li>
+                            <li><a href="page-single-user.html"><span>更多</span></a>
+                                <ul>
+                                    <li><a href="index.html">主页</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </div><!-- /desctop menu -->
+                <!-- 搜索 -->
+                <div class="tt-search">
+                    <div class="search-form">
+                        <input type="text" class="tt-search__input" id="searchKey" placeholder="搜索一下...">
+                        <button class="tt-search__btn" type="submit" id="searchBtn">
+                            <svg class="tt-icon">
+                                <use xlink:href="#icon-search"></use>
+                            </svg>
+                        </button>
+                    </div>
+                </div><!-- /tt-search --></div>
+            <div class="col-auto ml-auto">
+                <div class="tt-account-btn">
+                    <a th:href="@{/ }" class="btn btn-primary">登录</a>
+                    <a th:href="@{/ }" class="btn btn-secondary">注册</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<main id="tt-pageContent" class="tt-offset-small">
+    <div class="container">
+        <div class="tt-topic-list" id="tt-topic-list">
+            <div class="tt-list-header">
+                <div class="tt-col-topic">主题</div>
+                <div class="tt-col-category">分类</div>
+                <div class="tt-col-value hide-mobile">Start</div>
+                <div class="tt-col-value hide-mobile">跟帖</div>
+                <div class="tt-col-value hide-mobile">浏览</div>
+                <div class="tt-col-value">活跃</div>
+            </div>
+            <div class="tt-item">
+                <div class="tt-col-description"><h6 class="tt-title"><a href="page-single-topic.html"> Java并发编程 </a></h6>
+                    <div class="row align-items-center no-gutters">
+                        <div class="col-11">
+                            <ul class="tt-list-badge">
+                                <li class="show-mobile"><a href="#"><span class="tt-color04 tt-badge">pets</span></a>
+                                </li>
+                                <li><a href="#"><span class="tt-badge">java</span></a></li>
+                                <li><a href="#"><span class="tt-badge">并发</span></a></li>
+                            </ul>
+                        </div>
+                        <div class="col-1 ml-auto show-mobile">
+                            <div class="tt-value">1d</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tt-col-category"><span class="tt-color04 tt-badge">pets</span></div>
+                <div class="tt-col-value  hide-mobile">308</div>
+                <div class="tt-col-value tt-color-select  hide-mobile">660</div>
+                <div class="tt-col-value  hide-mobile">8.3k</div>
+                <div class="tt-col-value hide-mobile">1d</div>
+            </div>
+            <div class="tt-item">
+                <div class="tt-col-description"><h6 class="tt-title"><a href="page-single-topic.html"> SpringCloud总结 </a></h6>
+                    <div class="row align-items-center no-gutters  hide-desktope">
+                        <div class="col-11">
+                            <ul class="tt-list-badge">
+                                <li class="show-mobile"><a href="#"><span class="tt-color05 tt-badge">SpringCloud</span></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-1 ml-auto show-mobile">
+                            <div class="tt-value">1d</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tt-col-category"><span class="tt-color05 tt-badge">music</span></div>
+                <div class="tt-col-value hide-mobile">358</div>
+                <div class="tt-col-value tt-color-select hide-mobile">68</div>
+                <div class="tt-col-value hide-mobile">8.3k</div>
+                <div class="tt-col-value hide-mobile">1d</div>
+            </div>
+            <div class="tt-row-btn">
+                <button type="button" class="btn-icon js-topiclist-showmore">
+                    <a>持续构建中...</a>
+                </button>
+            </div>
+        </div>
+    </div>
+</main>
+<script type="text/javascript" th:src="@{js/bundle.js}"></script>
+<svg width="0" height="0" class="hidden">
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 117 117" id="icon-search">
+        <path d="M54 108C24.22 108 0 83.78 0 54S24.22 0 54 0s54 24.22 54 54-24.22 54-54 54zm0-99C29.19 9 9 29.19 9 54s20.19 45 45 45 45-20.19 45-45S78.81 9 54 9z"></path>
+        <path d="M112.5 117c-1.15 0-2.3-.44-3.18-1.32l-23.5-23.5a4.49 4.49 0 0 1 0-6.36 4.49 4.49 0 0 1 6.36 0l23.5 23.5a4.49 4.49 0 0 1 0 6.36c-.88.88-2.03 1.32-3.18 1.32z"></path>
+    </symbol>
+</svg>
+<script th:inline="javascript">
+    $(function () {
+
+        /*<![CDATA[*/
+        ctxPath = /*[[@{/}]]*/ '';
+        /*]]>*/
+
+        console.info(ctxPath);
+
+
+        $("#searchBtn").click(function () {
+
+            var key = $("#searchKey").val();
+            if(!key){
+               return false;
+            }
+
+            $.ajax({
+                async: false,
+                type: "GET",
+                url: ctxPath + 'search/blog/' + key,
+                contentType : "application/x-www-form-urlencoded; charset=utf-8",
+                data:$("#searchForm").serialize(),
+                dataType: "json",
+                success: function (res) {
+                    if(res.success){
+                        var arrays = res.obj;
+                        var htmls;
+                        for(var i = 0;i < arrays.length;i ++){
+                            console.log(arrays[i]);
+                            var html = "<div class=\"tt-item\">\n" +
+                                "                <div class=\"tt-col-avatar\">\n" +
+                                "                    <svg class=\"tt-icon\">\n" +
+                                "                        <use xlink:href=\"#icon-ava-n\"></use>\n" +
+                                "                    </svg>\n" +
+                                "                </div>\n" +
+                                "                <div class=\"tt-col-description\"><h6 class=\"tt-title\"><a href=\"page-single-topic.html\"> "+ arrays[i].highlight.tittle +"</a></h6>\n" +
+                                "                    <div class=\"row align-items-center no-gutters  hide-desktope\">\n" +
+                                "                        <div class=\"col-11\">\n" +
+                                "                            <ul class=\"tt-list-badge\">\n" +
+                                "                                <li class=\"show-mobile\"><a href=\"#\"><span class=\"tt-color05 tt-badge\">"+ arrays[i].highlight.content +"</span></a>\n" +
+                                "                                </li>\n" +
+                                "                            </ul>\n" +
+                                "                        </div>\n" +
+                                "                        <div class=\"col-1 ml-auto show-mobile\">\n" +
+                                "                            <div class=\"tt-value\">1d</div>\n" +
+                                "                        </div>\n" +
+                                "                    </div>\n" +
+                                "                </div>\n" +
+                                "                <div class=\"tt-col-category\"><span class=\"tt-color05 tt-badge\">music</span></div>\n" +
+                                "                <div class=\"tt-col-value hide-mobile\">358</div>\n" +
+                                "                <div class=\"tt-col-value tt-color-select hide-mobile\">68</div>\n" +
+                                "                <div class=\"tt-col-value hide-mobile\">8.3k</div>\n" +
+                                "                <div class=\"tt-col-value hide-mobile\">1d</div>\n" +
+                                "            </div>";
+
+                            htmls += html;
+
+                        }
+                        $("#tt-topic-list").html(htmls);
+                    }
+
+
+                },
+                error: function () {
+                    console.log("搜索异常...")
+                }
+            });
+        });
+    });
+</script>
+</body>
+</html>
