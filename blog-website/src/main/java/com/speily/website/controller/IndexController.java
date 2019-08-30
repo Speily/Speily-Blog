@@ -1,5 +1,6 @@
 package com.speily.website.controller;
 
+import com.speily.commons.BaseController;
 import org.springframework.web.bind.annotation.GetMapping;
 
 /**
@@ -7,7 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
  * @Date: 2019-08-27 14:20
  * @Description: -
  */
-public class IndexController {
+public class IndexController extends BaseController {
 
     /**
      * 跳转主页

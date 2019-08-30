@@ -1,0 +1,13 @@
+server:
+  port: 9090
+  servlet:
+    context-path: /web
+
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://47.94.165.79:3306/db_crm?useSSL=false&useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true
+    username: root
+    password: speily441123
+

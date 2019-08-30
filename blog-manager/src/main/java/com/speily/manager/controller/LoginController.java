@@ -2,6 +2,7 @@ package com.speily.manager.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 /**
  * @Auther: SPL
@@ -22,7 +23,14 @@ public class LoginController {
     }
 
 
-
+    /**
+     * 跳转登录页
+     * @return
+     */
+    @PostMapping(value = {"/","/login","login.html"})
+    public String login(){
+        return "login";
+    }
 
 
 
