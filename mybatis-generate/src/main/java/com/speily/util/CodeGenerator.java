@@ -1,12 +1,8 @@
 package com.speily.util;
 
-import com.baomidou.mybatisplus.core.exceptions.MybatisPlusException;
 import com.baomidou.mybatisplus.generator.AutoGenerator;
 import com.baomidou.mybatisplus.generator.config.*;
 import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
-import org.apache.commons.lang3.StringUtils;
-
-import java.util.Scanner;
 
 /**
  * @Auther: SPL
@@ -20,30 +16,32 @@ public class CodeGenerator {
 
     private static String tempBasePath = "/templates/gen-template";
 
-    /**
-     * <p>
-     * 读取控制台内容
-     * </p>
-     */
-    public static String scanner(String tip) {
-        Scanner scanner = new Scanner(System.in);
-        StringBuilder help = new StringBuilder();
-        help.append("请输入" + tip + "：");
-        System.out.println(help.toString());
-        if (scanner.hasNext()) {
-            String ipt = scanner.next();
-            if (StringUtils.isNotEmpty(ipt)) {
-                return ipt;
-            }
-        }
-        throw new MybatisPlusException("请输入正确的" + tip + "！");
-    }
+    //数据库配置四要素
+    private static String driverName = "com.mysql.cj.jdbc.Driver";
+    private static String url = "jdbc:mysql://47.100.40.130:3306/db_crm?useSSL=false&useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true";
+    private static String username = "root";
+    private static String password = "speily441123";
+
+    //基本包名
+    private static String basePackage="com.speily";
+
+    //要生成的表名
+    private static String[] tables= {"user"};
+
 
     public static void main(String[] args) {
         // 代码生成器
         AutoGenerator mpg = new AutoGenerator();
 
-        // 全局配置
+        //1、 数据源配置
+        DataSourceConfig db = new DataSourceConfig();
+        db.setDriverName(driverName);
+        db.setUsername(username);
+        db.setPassword(password);
+        db.setUrl(url);
+        mpg.setDataSource(db);
+
+        //2、 全局配置
         GlobalConfig gc = new GlobalConfig();
 //        String projectPath = System.getProperty("user.dir");
 //        gc.setOutputDir(projectPath + "/src/main/java");
@@ -60,23 +58,18 @@ public class CodeGenerator {
         gc.setServiceName("%sService");
         gc.setServiceImplName("%sServiceImpl");
         gc.setControllerName("%sController");
-
         mpg.setGlobalConfig(gc);
 
-
-        // 数据源配置
-        DataSourceConfig dsc = new DataSourceConfig();
-        dsc.setUrl("jdbc:mysql://47.94.165.79:3306/db_crm?useUnicode=true&useSSL=false&characterEncoding=utf8");
-        // dsc.setSchemaName("public");
-        dsc.setDriverName("com.mysql.cj.jdbc.Driver");
-        dsc.setUsername("root");
-        dsc.setPassword("speily441123");
-        mpg.setDataSource(dsc);
-
-        // 包配置
+        //3、 包配置
         PackageConfig pc = new PackageConfig();
-        pc.setModuleName(scanner("模块名"));
-        pc.setParent("com.speily");
+        pc.setParent(basePackage);
+        pc.setModuleName(null);  //所属模块
+        pc.setController("");
+        pc.setEntity("");
+        pc.setService("");
+        pc.setServiceImpl("");
+        pc.setMapper("");
+        pc.setXml("");
         mpg.setPackageInfo(pc);
 
         /*// 配置模板
@@ -92,8 +85,9 @@ public class CodeGenerator {
         templateConfig.setXml(null);
         mpg.setTemplate(templateConfig);*/
 
-        // 策略配置
+        //4、生成策略配置
         StrategyConfig strategy = new StrategyConfig();
+        strategy.setInclude(tables); // 需要生成的表
         strategy.setNaming(NamingStrategy.underline_to_camel);
         strategy.setColumnNaming(NamingStrategy.underline_to_camel);
         strategy.setEntityLombokModel(true);
