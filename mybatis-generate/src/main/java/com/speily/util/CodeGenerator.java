@@ -18,7 +18,7 @@ public class CodeGenerator {
 
     //数据库配置四要素
     private static String driverName = "com.mysql.cj.jdbc.Driver";
-    private static String url = "jdbc:mysql://47.100.40.130:3306/db_crm?useSSL=false&useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true";
+    private static String url = "jdbc:mysql://47.94.165.79:3306/spl_blog?useSSL=false&useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true";
     private static String username = "root";
     private static String password = "speily441123";
 
@@ -64,12 +64,12 @@ public class CodeGenerator {
         PackageConfig pc = new PackageConfig();
         pc.setParent(basePackage);
         pc.setModuleName(null);  //所属模块
-        pc.setController("");
-        pc.setEntity("");
-        pc.setService("");
-        pc.setServiceImpl("");
-        pc.setMapper("");
-        pc.setXml("");
+//        pc.setController("");
+//        pc.setEntity("");
+//        pc.setService("");
+//        pc.setServiceImpl("");
+//        pc.setMapper("");
+//        pc.setXml("");
         mpg.setPackageInfo(pc);
 
         /*// 配置模板
