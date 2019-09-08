@@ -12,19 +12,6 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body><!-- tt-mobile menu -->
-<nav class="panel-menu" id="mobile-menu">
-    <ul></ul>
-    <div class="mm-navbtn-names">
-        <div class="mm-closebtn">Close
-            <div class="tt-icon">
-                <svg>
-                    <use xlink:href="#icon-cancel"></use>
-                </svg>
-            </div>
-        </div>
-        <div class="mm-backbtn">Back</div>
-    </div>
-</nav>
 <!--NAV-->
 <header id="tt-header">
     <div class="container">
@@ -35,7 +22,8 @@
                         <use xlink:href="#icon-menu_icon"></use>
                     </svg>
                 </a><!-- /toggle mobile menu --><!-- logo -->
-                <div class="tt-logo"><a href="index.html">Speily的小屋  <img src="images/logo.png" alt=""></a></div><!-- /logo -->
+                <div class="tt-logo"><a href="index.html">Speily的小屋 <img src="images/logo.png" alt=""></a></div>
+                <!-- /logo -->
                 <!-- desctop menu -->
                 <div class="tt-desktop-menu">
                     <nav>
@@ -81,7 +69,8 @@
                 <div class="tt-col-value">活跃</div>
             </div>
             <div class="tt-item">
-                <div class="tt-col-description"><h6 class="tt-title"><a href="page-single-topic.html"> Java并发编程 </a></h6>
+                <div class="tt-col-description"><h6 class="tt-title"><a href="page-single-topic.html"> Java并发编程 </a>
+                </h6>
                     <div class="row align-items-center no-gutters">
                         <div class="col-11">
                             <ul class="tt-list-badge">
@@ -103,7 +92,8 @@
                 <div class="tt-col-value hide-mobile">1d</div>
             </div>
             <div class="tt-item">
-                <div class="tt-col-description"><h6 class="tt-title"><a href="page-single-topic.html"> SpringCloud总结 </a></h6>
+                <div class="tt-col-description"><h6 class="tt-title"><a href="page-single-topic.html">
+                    SpringCloud总结 </a></h6>
                     <div class="row align-items-center no-gutters  hide-desktope">
                         <div class="col-11">
                             <ul class="tt-list-badge">
@@ -130,6 +120,22 @@
         </div>
     </div>
 </main>
+
+
+<footer class="footer navbar-fixed-bottom ">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                Copyright©2019 Speily的小屋 speily,cn 版权所有
+            </div>
+            <div class="col-md-6">
+                备案/许可证号： <a href="http://www.beian.miit.gov.cn/" target="_blank">豫ICP备19032531号</a>
+            </div>
+        </div>
+
+    </div>
+</footer>
+
 <script type="text/javascript" th:src="@{js/bundle.js}"></script>
 <svg width="0" height="0" class="hidden">
     <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 117 117" id="icon-search">
@@ -150,22 +156,22 @@
         $("#searchBtn").click(function () {
 
             var key = $("#searchKey").val();
-            if(!key){
-               return false;
+            if (!key) {
+                return false;
             }
 
             $.ajax({
                 async: false,
                 type: "GET",
                 url: ctxPath + 'search/blog/' + key,
-                contentType : "application/x-www-form-urlencoded; charset=utf-8",
-                data:$("#searchForm").serialize(),
+                contentType: "application/x-www-form-urlencoded; charset=utf-8",
+                data: $("#searchForm").serialize(),
                 dataType: "json",
                 success: function (res) {
-                    if(res.success){
+                    if (res.success) {
                         var arrays = res.obj;
                         var htmls;
-                        for(var i = 0;i < arrays.length;i ++){
+                        for (var i = 0; i < arrays.length; i++) {
                             console.log(arrays[i]);
                             var html = "<div class=\"tt-item\">\n" +
                                 "                <div class=\"tt-col-avatar\">\n" +
@@ -173,11 +179,11 @@
                                 "                        <use xlink:href=\"#icon-ava-n\"></use>\n" +
                                 "                    </svg>\n" +
                                 "                </div>\n" +
-                                "                <div class=\"tt-col-description\"><h6 class=\"tt-title\"><a href=\"page-single-topic.html\"> "+ arrays[i].highlight.tittle +"</a></h6>\n" +
+                                "                <div class=\"tt-col-description\"><h6 class=\"tt-title\"><a href=\"page-single-topic.html\"> " + arrays[i].highlight.tittle + "</a></h6>\n" +
                                 "                    <div class=\"row align-items-center no-gutters  hide-desktope\">\n" +
                                 "                        <div class=\"col-11\">\n" +
                                 "                            <ul class=\"tt-list-badge\">\n" +
-                                "                                <li class=\"show-mobile\"><a href=\"#\"><span class=\"tt-color05 tt-badge\">"+ arrays[i].highlight.content +"</span></a>\n" +
+                                "                                <li class=\"show-mobile\"><a href=\"#\"><span class=\"tt-color05 tt-badge\">" + arrays[i].highlight.content + "</span></a>\n" +
                                 "                                </li>\n" +
                                 "                            </ul>\n" +
                                 "                        </div>\n" +
