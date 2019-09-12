@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.w3.org/1999/xhtml">
+<div th:fragment="common_js(scripts)">
+
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+    <!--/* 页面的附加js的占位符*/-->
+    <th:block th:replace="${scripts}" />
+</div>
+</html>

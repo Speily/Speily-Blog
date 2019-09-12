@@ -4,11 +4,29 @@ server:
   servlet:
     context-path: /manager
 
+
 # Spring配置
 spring:
+  #数据库配置
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://47.94.165.79:3306/db_crm?useSSL=false&useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true
+    url: jdbc:mysql://47.94.165.79:3306/spl_blog?useSSL=false&useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true
     username: root
     password: speily441123
+  #thymelea模板配置
+  thymeleaf:
+    cache: false #主要是这里，设置默认不缓存页面
+    prefix: classpath:/templates/
+    mode: HTML5
+    encoding: UTF-8
+
+mybatis-plus:
+  mapper-locations: classpath:/mapper/*Mapper.xml
+  typeAliasesPackage: com.speily.entity
+  global-config:
+    db-column-underline: true
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true
+    cache-enabled: false
 

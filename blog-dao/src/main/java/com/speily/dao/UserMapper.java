@@ -1,7 +1,7 @@
 package com.speily.dao;
 
+import com.baomidou.mybatisplus.mapper.BaseMapper;
 import com.speily.entity.User;
-import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**
  * <p>

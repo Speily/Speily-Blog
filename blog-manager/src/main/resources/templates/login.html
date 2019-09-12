@@ -161,7 +161,7 @@
 			color: #777;
 			font: 13px Helvetica, Arial, sans-serif;
 			margin: 0 0 10px;
-			padding: 15px 10px 15px 40px;
+			padding: 15px 10px 15px 15px;
 			width: 80%;
 		}
 		#content form input[type="text"]:focus,
@@ -309,12 +309,15 @@
 	</style>
 </head>
 <body>
+<div class="header" style="height: 30px;background-color: #00a8c6">
+	这里是头部
+</div>
 <div class="container">
 	<section id="content">
 		<form action="">
 			<h1>登录</h1>
 			<div>
-				<input type="text" placeholder="邮箱" required="" id="username" />
+				<input type="text" placeholder="用户名" required="" id="username" />
 			</div>
 			<div>
 				<input type="password" placeholder="密码" required="" id="password" />
@@ -329,15 +332,13 @@
 			</div>
 		</form><!-- form -->
 		 <div class="button">
-			<a href="http://speily.cn">主站</a>
+			<a href="http://speily.cn" target="_blank">主站</a>
 		</div> <!-- button -->
 	</section><!-- content -->
 </div>
 <!-- container -->
-
-
-<br><br><br><br>
-<div style="text-align:center;">
+<div class="footer" style="height: 30px;background-color: #00a8c6;text-align:center;">
+	这里是尾部
 </div>
 </body>
 </html>

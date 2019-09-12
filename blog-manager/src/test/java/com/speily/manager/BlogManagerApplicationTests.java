@@ -13,4 +13,10 @@ public class BlogManagerApplicationTests {
 	public void contextLoads() {
 	}
 
+
+	@Test
+	public void testDb(){
+
+	}
+
 }

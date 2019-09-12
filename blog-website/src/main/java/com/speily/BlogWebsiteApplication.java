@@ -1,4 +1,4 @@
-package com.speily.website;
+package com.speily;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

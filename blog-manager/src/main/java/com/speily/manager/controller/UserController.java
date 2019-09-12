@@ -1,10 +1,14 @@
 package com.speily.manager.controller;
 
 
+import com.speily.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import org.springframework.stereotype.Controller;
 import com.speily.commons.BaseController;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * <p>
@@ -17,6 +21,17 @@ import com.speily.commons.BaseController;
 @Controller
 @RequestMapping("/user")
 public class UserController extends BaseController {
+
+
+    @Autowired
+    private UserService userService;
+
+
+    @RequestMapping("/test")
+    @ResponseBody
+    public Object test(){
+        return userService.selectById(1);
+    }
 
 }
 
