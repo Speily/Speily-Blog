@@ -15,9 +15,9 @@ spring:
     password: speily441123
   #thymelea模板配置
   thymeleaf:
-    cache: false #主要是这里，设置默认不缓存页面
+    cache: false #设置默认不缓存页面
     prefix: classpath:/templates/
-    mode: HTML5
+    mode: HTML
     encoding: UTF-8
 
 mybatis-plus:
