@@ -5,7 +5,7 @@
     <!-- 通用查询映射结果 -->
     <resultMap id="BaseResultMap" type="com.speily.entity.User">
         <id column="id" property="id" />
-        <result column="name" property="name" />
+        <result column="name" property="loginName" />
         <result column="password" property="password" />
         <result column="create_time" property="createTime" />
         <result column="update_time" property="updateTime" />
@@ -15,7 +15,7 @@
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        id, name, password, create_time, update_time, status, delete_flag
+        id, login_name, password, create_time, update_time, status, delete_flag
     </sql>
 
 </mapper>

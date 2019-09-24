@@ -21,4 +21,9 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
     @Autowired
     private UserMapper userMapper;
 
+    @Override
+    public User findUserByLoginName(String username) {
+
+        return userMapper.selectOne(new User(username));
+    }
 }

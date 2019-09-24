@@ -1,4 +1,4 @@
-package com.speily.util;
+package com.speily.generate;
 
 import com.baomidou.mybatisplus.generator.AutoGenerator;
 import com.baomidou.mybatisplus.generator.config.*;
@@ -26,7 +26,7 @@ public class CodeGenerator {
     private static String basePackage="com.speily";
 
     //要生成的表名
-    private static String[] tables= {"user"};
+    private static String[] tables= {"sys_user"};
 
 
     public static void main(String[] args) {

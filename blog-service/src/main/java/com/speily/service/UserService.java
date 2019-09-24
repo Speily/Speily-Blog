@@ -13,4 +13,5 @@ import com.speily.entity.User;
  */
 public interface UserService extends IService<User> {
 
+    User findUserByLoginName(String username);
 }

@@ -23,6 +23,9 @@ import lombok.experimental.Accessors;
 @Accessors(chain = true)
 public class User extends Model<User> {
 
+    public User() {
+    }
+
     private static final long serialVersionUID=1L;
 
     @TableId(value = "id", type = IdType.AUTO)
@@ -31,7 +34,7 @@ public class User extends Model<User> {
     /**
      * 用户名
      */
-    private String name;
+    private String loginName;
 
     /**
      * 密码
@@ -45,6 +48,11 @@ public class User extends Model<User> {
     private String status;
 
     private String deleteFlag;
+
+    public User(String username) {
+        this.loginName = username;
+        this.status = "YES";
+    }
 
 
     @Override
